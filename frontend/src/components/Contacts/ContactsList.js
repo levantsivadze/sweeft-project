@@ -5,6 +5,7 @@ import classes from './ContactsList.module.css'
 
 function ContactsList({filter}) {
 	const contacts = useSelector((state) => state)
+	console.log(contacts)
 
 	const filteredContacts = !filter
 		? contacts

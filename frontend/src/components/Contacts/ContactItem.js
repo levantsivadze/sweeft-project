@@ -56,14 +56,18 @@ function ContactItem({contact}) {
 		makeCall(callDate)
 	}
 
+	const deleteHandler = () => {
+		dispatch(deleteContact(contact.id))
+	}
+
 	return (
 		<li key={contact.id} className={classes.contact}>
 			<p>{contact.name}</p>
 			<p>{contact.phoneNumber}</p>
 			<div className={classes.buttons}>
-				<button onClick={() => dispatch(deleteContact(contact.id))}>
-					Delete
-				</button>
+				<button onClick={deleteHandler}>Delete</button>
+				<button>Edit</button>
+
 				<button onClick={callHandler}>Call</button>
 			</div>
 		</li>

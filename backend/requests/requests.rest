@@ -1,1 +1,5 @@
+###
+GET http://localhost:3001/api/calls
 
+###
+DELETE http://localhost:3001/api/calls/61dff81313fed48e56b9949e

@@ -14,9 +14,9 @@ export const deleteContact = (id) => {
 	return action
 }
 
-// export const editContact = (id) => {
-// 	const action = {
-// 		type: 'EDIT',
-// 		id
-// 	}
-// }
+export const editContact = (contact) => {
+	const action = {
+		type: 'EDIT',
+		payload: contact
+	}
+}

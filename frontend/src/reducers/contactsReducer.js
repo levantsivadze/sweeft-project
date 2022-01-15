@@ -18,6 +18,15 @@ const deleteContactById = (state = initState, id) => {
 	return updatedContacts
 }
 
+const editContact = (state = initState, action) => {
+	const {id, name, phoneNumber} = action.payload
+	const existingContact = state.find((element) => element.id === id)
+	if (existingContact) {
+		existingContact.name = name
+		existingContact.phoneNumber = phoneNumber
+	}
+}
+
 const contactsReducer = (state = initState, action) => {
 	let contacts = state
 	switch (action.type) {

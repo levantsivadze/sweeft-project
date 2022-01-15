@@ -20,11 +20,15 @@ function ContactsPage() {
 			localStorage.removeItem('token')
 			navigate('/login')
 		}
-	}, [navigate])
+	}, [])
 
 	const logoutHandler = (e) => {
 		localStorage.removeItem('token')
 		navigate('/login')
+	}
+
+	const callsHistoryHandler = () => {
+		navigate('/calls')
 	}
 	return (
 		<div>
@@ -35,6 +39,7 @@ function ContactsPage() {
 			/>
 			<ContactsList contacts={contacts} filter={filter} />
 			<button onClick={logoutHandler}>Logout</button>
+			<button onClick={callsHistoryHandler}>Calls History</button>
 		</div>
 	)
 }

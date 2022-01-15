@@ -30,6 +30,7 @@ function LoginForm() {
 	}
 
 	const fetchHttp = async () => {
+		console.log('fetchHttp')
 		const response = await fetch('http://localhost:3001/api/login', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
@@ -39,8 +40,9 @@ function LoginForm() {
 			})
 		})
 
+		console.log(response)
 		const data = await response.json()
-
+		console.log(data)
 		if (data.user) {
 			localStorage.setItem('token', data.user)
 			alert('Login was successful')
@@ -56,9 +58,9 @@ function LoginForm() {
 		usernameBlurHandler(true)
 
 		if (!usernameIsValid && !passwordIsValid) {
-			return
+			alert('Something went wrong')
 		}
-
+		console.log('login')
 		fetchHttp()
 
 		resetUsername()
